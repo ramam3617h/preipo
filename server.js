@@ -25,10 +25,21 @@ const app = express();
 app.use(helmet());
 
 // CORS
-//app.use(cors({
+// app.use(cors({
  // origin: process.env.FRONTEND_URL || 'http://localhost:3000',
-  //credentials: true
+  // credentials: true
 // }));
+
+const allowedOrigins = ['https://preipoui-04de9a5d5dd9.herokuapp.com','https://market.vrksatechnology.com','https://eshushop.com','https://www.eshushop.com','localhost:3000'];
+// CORS configuration
+app.use(cors({
+//  origin: process.env.FRONTEND_URL, process.env.FRONTEND_URL_SHOP || '*',
+    orgin: allowedOrigins || '*',
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS' ],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
 
 //const allowedOrigins = ['https://market.vrksatechnology.com','https://eshushop.com','https://www.eshushop.com','localhost:3000>
 // CORS configuration
