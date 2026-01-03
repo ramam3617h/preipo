@@ -25,10 +25,22 @@ const app = express();
 app.use(helmet());
 
 // CORS
+//app.use(cors({
+ // origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+  //credentials: true
+// }));
+
+//const allowedOrigins = ['https://market.vrksatechnology.com','https://eshushop.com','https://www.eshushop.com','localhost:3000>
+// CORS configuration
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:3000',
-  credentials: true
+  origin: process.env.FRONTEND_URL || '*',
+  //  orgin: allowedOrigins || '*',
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE','OPTION'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
+
 
 // Body parser
 app.use(express.json({ limit: '10mb' }));
