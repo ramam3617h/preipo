@@ -36,7 +36,7 @@ app.use(cors({
   origin: process.env.FRONTEND_URL || '*',
   //  orgin: allowedOrigins || '*',
   credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE','OPTION'],
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE','OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
