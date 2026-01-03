@@ -43,13 +43,13 @@ app.use(cors({
 
 //const allowedOrigins = ['https://market.vrksatechnology.com','https://eshushop.com','https://www.eshushop.com','localhost:3000>
 // CORS configuration
-app.use(cors({
-  origin: process.env.FRONTEND_URL || '*',
+//app.use(cors({
+ // origin: process.env.FRONTEND_URL || '*',
   //  orgin: allowedOrigins || '*',
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE','OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
+ // credentials: true,
+  //methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE','OPTIONS'],
+  //allowedHeaders: ['Content-Type', 'Authorization']
+// }));
 
 
 
